@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="container text-center">
+    <h1><%= @restaurant.name%></h1>
+    <h4>Located At: <%= @restaurant.address%></h4>
+    <% if @restaurant.phone_number.present? %>
+      <h4>Call us at <%= @restaurant.phone_number %></h4>
+    <% end %>
+
+    <%= link_to "Back to All Restaurants", restaurants_path, class: "btn btn-danger" %>
+
+    <div class="reviews">
+      <ul class="list-unstyled">
+        <% @restaurant.reviews.each do |review|%>
+          <li>
+            <% review.rating.times do %>
+              <i class="fa fa-star"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,12 @@
+<%= simple_form_for(@restaurant) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :name, label: "Name of Restaurant", error: "You must enter a name", placeholder: 'L\'Express' %>
+    <%= f.input :address, label: "Address", error: "You must enter an address", placeholder: "3927 St Denis St, Montreal, QC H2W 2M4" %>
+    <%= f.input :phone_number, label: "Phone Number", placeholder: "(514) 845-5333" %>
+    <%= f.input :category, label: "Type of cuisine",error: "You must enter a cuisine", hint: "only chinese, italian, japanese, french, or belgian", placeholder: "french" %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-success"  %>
+  </div>
+
+<% end %>
