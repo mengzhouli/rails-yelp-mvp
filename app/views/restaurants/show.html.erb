@@ -9,13 +9,20 @@
     <%= link_to "Back to All Restaurants", restaurants_path, class: "btn btn-danger" %>
 
     <div class="reviews">
+      <h3>New Review</h3>
+        <%= render '/reviews/form' %>
+
       <ul class="list-unstyled">
         <% @restaurant.reviews.each do |review|%>
-          <li>
-            <% review.rating.times do %>
-              <i class="fa fa-star"></i>
-            <% end %>
-          </li>
+          <ul class="list-unstyled">
+            <li>
+              <% review.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
+            </li>
+            <li><%= review.content %></li>
+            <li><%= review.created_at %></li>
+          </ul>
         <% end %>
       </ul>
     </div>
